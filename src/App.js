@@ -1,26 +1,78 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
+
+class App extends React.Component {
+    constructor(){
+       super();
+       this.state = {
+           goods:[{name:"petro"},
+               {name:"mykola"},
+               {name:"ivan"},
+               {name:"oleh"},
+               {name:"roman"},
+               ],
+
+       }
+
+    }
+
+
+    filter=(e)=> {
+        let input = e.target;
+        let filter = input.value.toLowerCase();
+        let filterItems = document.querySelectorAll('.card');
+        console.log(filterItems)
+
+        filterItems.forEach(item => {
+
+            if (item.innerHTML.toLowerCase().indexOf(filter) > -1) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        })
+    }
+
+
+
+    render() {
+        
+         
+    return ( 
+        
+        <div className = "App">     
+
+            <header>
+                <input type="text"  id="search" onKeyUp={this.filter}/>
+            </header>
+       <section className="gallery">
+           {this.state.goods.map((good)=>{
+                   return (
+                       <div className="card">
+                           {good.name}
+                       </div>
+                   )
+
+
+
+
+
+
+           })
+
+           }
+
+
+
+
+       </section>
+
+        
+        </div>
+        
+    );
+    }
+}
 export default App;
