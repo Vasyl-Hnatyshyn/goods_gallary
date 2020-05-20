@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
+import Modal from  './Components/Modal';
+
+
 
 class App extends React.Component {
     constructor(){
        super();
        this.state = {
-           goods:[{name:"petro",id:1},
-               {name:"mykola",id:2},
+           goods:[{name:"mercedes",id:1, price: "22700$",details:"lerem sadasdasd asdasdasd", img:"https://cdn0.riastatic.com/photos/ir/new/auto/photo/mercedes-benz_gls-350__317269940-620x415x70.jpg"},
+               {name:"audi",id:2,price: "22700$",details:"lerem sadasdasd asdasdasd", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSEpuTUzBy1fm7sPB9cNCMZOV2uojPhwxrrNjlg1iEaC09xigE_&usqp=CAU"},
                {name:"ivan",id:3},
                {name:"oleh",id:4},
                {name:"roman",id:5},
@@ -14,14 +17,6 @@ class App extends React.Component {
        }
     }
 
-
-
-
-    componentDidUpdate(prevProps, prevState) {
-
-
-
-    }
 
 
     filter=(e)=> {
@@ -74,8 +69,12 @@ class App extends React.Component {
 
 
 
-        <div className = "App">     
-           <button id="modal-add-product">+</button>
+        <div className = "App">
+
+           <Modal />
+
+
+
             <header>
                 <input type="text"  id="search" onKeyUp={this.filter}/>
             </header>
@@ -83,7 +82,10 @@ class App extends React.Component {
            {this.state.goods.map((good)=>{
                    return (
                        <div className="card"  key={good.id}>
-                           {good.name}
+                           <p className="product-titel"> {good.name}</p>
+                           <img src={good.img} alt={good.name}/>
+                           <p className="product-details">{good.details} </p>
+                           <p className="price">  {good.price}</p>
 
                          <button className="remove-product" onClick={()=>{this.removeProduct(good)} }>Х</button>
                        </div>
