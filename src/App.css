@@ -9,6 +9,7 @@
 
  button { outline: none;
  border:none;
+ cursor: pointer;
  }
 
 
@@ -24,6 +25,7 @@
      border-radius: 10px;
      font-size: 20px;
      box-shadow: 1px 2px 7px -3px #1f2226;
+     outline: none;
  }
 
 
