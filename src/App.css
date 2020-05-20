@@ -7,11 +7,19 @@
     padding: 0;
 }
 
- button { outline: none }
+ button { outline: none;
+ border:none;
+ }
 
+
+ .App {
+     text-align: center;
+
+
+ }
  #search{
-     margin: 40px 200px;
-     width: 30%;
+     margin: 40px auto;
+     width: 56%;
      min-height: 40px;
      border-radius: 10px;
      font-size: 20px;
@@ -29,7 +37,7 @@
       background-color: lightslategray;
  }
 
- .card {
+ .card {position: relative;
      margin: 10px 1.5%;
      width: 22%;
      min-height: 230px;
@@ -38,6 +46,30 @@
      border-radius: 10px;
  }
 
+ .remove-product {
+     width: 20px;
+     height: 20px;
+     border-radius: 50%;
+     background-color: lightgreen;
+     position: absolute;
+     top: 0;
+     right: 0;
+ }
+
+
+#modal-add-product{
+
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    color:green;
+    background-color: ivory;
+    position: absolute;
+    top: 3%;
+    right: 20px;
+    font-size: 24px;
+    box-shadow: 1px 2px 7px -3px #1f2226;
+}
 
 
 
