@@ -8,8 +8,8 @@ class App extends React.Component {
     constructor(){
        super();
        this.state = {
-           goods:[{name:"mercedes",id:1, price: "22700$",details:"lerem sadasdasd asdasdasd", img:"https://cdn0.riastatic.com/photos/ir/new/auto/photo/mercedes-benz_gls-350__317269940-620x415x70.jpg"},
-               {name:"audi",id:2,price: "22700$",details:"bot bot", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSEpuTUzBy1fm7sPB9cNCMZOV2uojPhwxrrNjlg1iEaC09xigE_&usqp=CAU"},
+           goods:[{name:"mercedes",id:1, price: "22700",details:"lerem sadasdasd asdasdasd", img:"https://cdn0.riastatic.com/photos/ir/new/auto/photo/mercedes-benz_gls-350__317269940-620x415x70.jpg"},
+               {name:"audi",id:2,price: "66220",details:"bot bot", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSEpuTUzBy1fm7sPB9cNCMZOV2uojPhwxrrNjlg1iEaC09xigE_&usqp=CAU"},
                {name:"ivan",id:3},
                {name:"oleh",id:4},
                {name:"roman",id:5},
@@ -35,22 +35,24 @@ class App extends React.Component {
         })
     }
 
-    // addTaskToFolder=val=> {
-    //
-    //     let a ={text: val , author:this.state.author, id: +`${Math.floor(Math.random() * 1000)}` };
-    //
-    //     const updateFolder = [...this.state.taskFolder,a];
-    //
-    //     this.setState({
-    //
-    //         taskFolder:updateFolder
-    //
-    //     })
-    //
-    //     localStorage.setItem('task', JSON.stringify(updateFolder));
-    //
-    // }
-    //
+     addTaskToFolder=val=> {
+
+         console.log (val)
+        val.id= +`${Math.floor(Math.random() * 1000)}`;
+
+
+
+        const updateGoods = [...this.state.goods,val];
+
+        this.setState({
+
+            goods:updateGoods
+
+        })
+
+
+    }
+
     removeProduct=good=>{
         const update = this.state.goods.filter(function(item){
         return item.id !== good.id;
@@ -71,7 +73,7 @@ class App extends React.Component {
 
         <div className = "App">
 
-           <Modal />
+           <Modal  addTaskToFolder={this.addTaskToFolder}/>
 
 
 
@@ -85,7 +87,7 @@ class App extends React.Component {
                            <p className="product-titel"> {good.name}</p>
                            <img src={good.img} alt={good.name}/>
                            <p className="product-details">{good.details} </p>
-                           <p className="price">  {good.price}</p>
+                           <p className="price">  {good.price + " $"}</p>
 
                          <button className="remove-product" onClick={()=>{this.removeProduct(good)} }>Х</button>
                        </div>

@@ -1,6 +1,6 @@
 body{position: relative;}
 
-#modalB_graund {
+#modal-back-ground {
 
     z-index: 222;
     position: absolute;
@@ -13,13 +13,16 @@ body{position: relative;}
 }
 
 .modal-content {
-    padding: 25px 0 10px;
+    height: 40%;
     margin: 210px auto;
-    width:30%;
+    width:50%;
     background-color: #c31432;
     border-radius: 10px;
     position: relative;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 20px ;
 
 }
 

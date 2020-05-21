@@ -7,7 +7,13 @@ class Modal extends React.Component {
 
         this.state={
             modalStyle:"none",
-            newTask:""
+            newTask: {
+                name:"",
+                img:"",
+                price:"",
+                details:"",
+                id:""
+            }
         };
 
     }
@@ -26,47 +32,48 @@ class Modal extends React.Component {
         this.setState({
             modalStyle:"none",
             newTask:""
-
-
         })
     }
 
-    newTask=(e)=>{
+    newProduct=(e)=>{
+
+
+
 
         this.setState({
-
-            newTask:e.target.value
+            newTask:{
+                [e.target.id]:  e.target.value,
+            }
         })
 
 
-    }
 
-    addTaskToFolder=()=>{
-
-        this.props.add(this.state.newTask)
-        this.closeModal();
 
     }
-
 
     render () {
-
+        const {addTaskToFolder}=this.props
         return(
             <div>
                 <button id="modal-add-product"  onClick={this.showModal} >+</button>
 
 
-                <div id="modalB_graund" style={{display:this.state.modalStyle}}>
+                <div id="modal-back-ground" style={{display:this.state.modalStyle}}>
 
                     <div className="modal-content"  >
 
                         <span  id="close" onClick={ this.closeModal}>&times; </span>
 
-                        <textarea id="txt"  placeholder="Add your task..." onChange={this.newTask} value={this.state.newTask}></textarea>
-
+                        <input type="text"  data-name ="name" id="name" placeholder="product titel"  onChange={this.newProduct}/>
+                        <input type="text" id="img" placeholder="link to the picture"    onChange={this.newProduct}  />
+                        <input type="text" id="details" placeholder="product description"  onChange={this.newProduct}  />
+                        <input type="text" id="price" placeholder="product price "  onChange={this.newProduct}  />
 
                         {this.state.newTask ?
-                            <a href="#" onClick={this.addTaskToFolder} id ="modalBtn"> add </a>:
+                            <a href="#" onClick={()=>{
+                                addTaskToFolder(this.state.newTask);
+                                this.closeModal();
+                            }} id ="modalBtn"> add </a>:
                             <p id="errorMessage"> Your task is empty... </p>}
 
 
