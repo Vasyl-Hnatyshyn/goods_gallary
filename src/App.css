@@ -42,7 +42,7 @@
  .card {position: relative;
      margin: 10px 1.5%;
      width: 22%;
-     min-height: 280px;
+     min-height: 280px !important;
      text-align: center;
      background-color: #FFFFFF;
      border-radius: 10px;

@@ -36,16 +36,15 @@ class Modal extends React.Component {
     }
 
     newProduct=(e)=>{
-
-
-
+         let a =this.state.newTask;
+         a[e.target.id]= e.target.value;
 
         this.setState({
-            newTask:{
-                [e.target.id]:  e.target.value,
-            }
+            newTask:a
         })
 
+
+        console.log(this.state.newTask)
 
 
 
