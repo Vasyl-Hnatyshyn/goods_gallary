@@ -68,6 +68,17 @@
  }
 
 
+.to-top{
+    border-radius: 5px;
+    padding: 2% 4%;
+    background-color: #3fef0b;
+    color:white;
+    font-weight: 800;
+    position: absolute;
+    bottom: 10px;
+    left:10px;
+}
+
 
 
 

@@ -14,6 +14,7 @@ class App extends React.Component {
                {name:"oleh",id:4},
                {name:"roman",id:5},
                ],
+           topElementId: null
        }
     }
 
@@ -61,21 +62,38 @@ class App extends React.Component {
             goods:update
         })
     }
+    pinToTop = id => {
+    this.setState({ setTopElementId: id })
+    }
 
-
+    // toTop=good=>{
+    //     let currentProduct=good;
+    //     const filtered = this.state.goods.filter(function(item){
+    //         return item.id !== good.id;
+    //     })
+    //     filtered.unshift(currentProduct);
+    //     this.setState({
+    //         goods:filtered
+    //     })
+    // }
 
     render() {
 
-    return ( 
+        const pinnedItem = this.state.goods.find(good => good.id === this.state.topElementId);
+        const goodsList = this.state.goods.filter(good => good.id !== this.state.topElementId);
 
 
 
+
+
+    return (
+
+        <Product {...pinnedItem}>
+        {goodsList.map((product) => <Product {...product}>}
 
         <div className = "App">
 
            <Modal  addTaskToFolder={this.addTaskToFolder}/>
-
-
 
             <header>
                 <input type="text"  id="search" onKeyUp={this.filter}/>
@@ -90,6 +108,7 @@ class App extends React.Component {
                            <p className="price">  {good.price + " $"}</p>
 
                          <button className="remove-product" onClick={()=>{this.removeProduct(good)} }>Х</button>
+                         <button className="to-top" onClick={()=>{this.pinToTop(good.id)} }>top</button>
                        </div>
                    )
            })

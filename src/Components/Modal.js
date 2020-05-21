@@ -24,14 +24,19 @@ class Modal extends React.Component {
 
             modalStyle:"block",
 
-
         })
     }
 
     closeModal=()=> {
         this.setState({
+            newTask: {
+                name:"",
+                img:"",
+                price:"",
+                details:"",
+                id:""
+            },
             modalStyle:"none",
-            newTask:""
         })
     }
 
@@ -42,11 +47,6 @@ class Modal extends React.Component {
         this.setState({
             newTask:a
         })
-
-
-        console.log(this.state.newTask)
-
-
 
     }
 
@@ -63,10 +63,10 @@ class Modal extends React.Component {
 
                         <span  id="close" onClick={ this.closeModal}>&times; </span>
 
-                        <input type="text"  data-name ="name" id="name" placeholder="product titel"  onChange={this.newProduct}/>
-                        <input type="text" id="img" placeholder="link to the picture"    onChange={this.newProduct}  />
-                        <input type="text" id="details" placeholder="product description"  onChange={this.newProduct}  />
-                        <input type="text" id="price" placeholder="product price "  onChange={this.newProduct}  />
+                        <input type="text"  data-name ="name" id="name" placeholder="product titel"  value={this.state.newTask.name} onChange={this.newProduct}/>
+                        <input type="text" id="img" placeholder="link to the picture"   value={this.state.newTask.img}  onChange={this.newProduct}  />
+                        <input type="text" id="details" placeholder="product description"  value={this.state.newTask.details} onChange={this.newProduct}  />
+                        <input type="text" id="price" placeholder="product price " value={this.state.newTask.price}  onChange={this.newProduct}  />
 
                         {this.state.newTask ?
                             <a href="#" onClick={()=>{
