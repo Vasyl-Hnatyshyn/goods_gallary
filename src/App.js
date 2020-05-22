@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Modal from  './Components/Modal';
+import Modal from './Components/Modal/Modal';
 import Product from  './Components/Product/Product';
 
 
@@ -18,8 +18,6 @@ class App extends React.Component {
            topElementId: null,
        }
     }
-
-
 
     filter=(e)=> {
 
@@ -44,9 +42,7 @@ class App extends React.Component {
         const updateGoods = [...this.state.goods,val];
 
         this.setState({
-
             goods:updateGoods
-
         })
 
 
@@ -63,20 +59,9 @@ class App extends React.Component {
 
     pinToTop = id => {
         this.setState((prevState) => ({
-            setTopElementId: prevState.setTopElementId === id ? null : id
+            topElementId: prevState. topElementId === id ? null : id
         }))
     }
-
-    // toTop=good=>{
-    //     let currentProduct=good;
-    //     const filtered = this.state.goods.filter(function(item){
-    //         return item.id !== good.id;
-    //     })
-    //     filtered.unshift(currentProduct);
-    //     this.setState({
-    //         goods:filtered
-    //     })
-    // }
 
     render() {
 
@@ -94,12 +79,18 @@ class App extends React.Component {
             <header>
                 <input type="text"  id="search" onKeyUp={this.filter}/>
             </header>
+
        <section className="gallery">
-           <Product {...pinnedItem} />
+           {pinnedItem &&<Product
+               good={pinnedItem}
+               removeProduct={this.removeProduct}
+               pinToTop={this.pinToTop}
+           />}
 
            {goodsList.map((good)=>{
                    return (
                        <Product
+                        key={good.id}
                         good={good}
                         removeProduct={this.removeProduct}
                         pinToTop={this.pinToTop}

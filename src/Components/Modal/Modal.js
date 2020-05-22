@@ -54,14 +54,14 @@ class Modal extends React.Component {
         const {addTaskToFolder}=this.props
         return(
             <div>
-                <button id="modal-add-product"  onClick={this.showModal} >+</button>
+                <button id="modal-add-product"  onClick={this.showModal} >Add product</button>
 
 
                 <div id="modal-back-ground" style={{display:this.state.modalStyle}}>
 
                     <div className="modal-content"  >
 
-                        <span  id="close" onClick={ this.closeModal}>&times; </span>
+                        <span  id="close" onClick={ this.closeModal}>X</span>
 
                         <input type="text"  data-name ="name" id="name" placeholder="product titel"  value={this.state.newTask.name} onChange={this.newProduct}/>
                         <input type="text" id="img" placeholder="link to the picture"   value={this.state.newTask.img}  onChange={this.newProduct}  />
