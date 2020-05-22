@@ -11,7 +11,7 @@
 .bottom-card-text {
     display: flex;
     justify-content: space-around;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: bold;
     font-size: 18px;
 

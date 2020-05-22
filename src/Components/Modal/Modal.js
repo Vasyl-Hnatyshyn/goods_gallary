@@ -12,8 +12,9 @@ class Modal extends React.Component {
                 img:"",
                 price:"",
                 details:"",
-                id:""
-            }
+                id:"1"
+            },
+            inputField: true,
         };
 
     }
@@ -30,11 +31,11 @@ class Modal extends React.Component {
     closeModal=()=> {
         this.setState({
             newTask: {
-                name:"",
-                img:"",
-                price:"",
-                details:"",
-                id:""
+                name:" ",
+                img:" ",
+                price:" ",
+                details:" ",
+                id:" "
             },
             modalStyle:"none",
         })
@@ -48,7 +49,26 @@ class Modal extends React.Component {
             newTask:a
         })
 
+      this.inputAreEmpty();
+
     }
+
+
+    inputAreEmpty=()=>{
+        let text = this.state.newTask;
+        let fieldText=[];
+        for(let key in text){
+            fieldText.push(text[key])
+            }
+        this.setState({
+            inputField:fieldText.includes("")
+        })
+
+
+        }
+
+
+
 
     render () {
         const {addTaskToFolder}=this.props
@@ -59,22 +79,31 @@ class Modal extends React.Component {
 
                 <div id="modal-back-ground" style={{display:this.state.modalStyle}}>
 
+
+
+
                     <div className="modal-content"  >
 
-                        <span  id="close" onClick={ this.closeModal}>X</span>
+                        <button  id="close-modal-window" onClick={ this.closeModal}>X</button>
 
-                        <input type="text"  data-name ="name" id="name" placeholder="product titel"  value={this.state.newTask.name} onChange={this.newProduct}/>
-                        <input type="text" id="img" placeholder="link to the picture"   value={this.state.newTask.img}  onChange={this.newProduct}  />
-                        <input type="text" id="details" placeholder="product description"  value={this.state.newTask.details} onChange={this.newProduct}  />
-                        <input type="text" id="price" placeholder="product price " value={this.state.newTask.price}  onChange={this.newProduct}  />
+                        <label htmlFor="name" >Product title</label>
+                        <input type="text" id="name" placeholder="title..."  value={this.state.newTask.name} onChange={this.newProduct}/>
 
-                        {this.state.newTask ?
-                            <a href="#" onClick={()=>{
+                        <label htmlFor="img" >Image link</label>
+                        <input type="text" id="img" placeholder="link to the picture..."   value={this.state.newTask.img}  onChange={this.newProduct}  />
+
+                        <label htmlFor="details" >Product descriptions</label>
+                        <input type="text" id="details" placeholder="descriptions..."  value={this.state.newTask.details} onChange={this.newProduct}  />
+
+                        <label htmlFor="price" >Product price</label>
+                        <input type="text" id="price" placeholder="price... " value={this.state.newTask.price}  onChange={this.newProduct}  />
+
+                        {this.state.inputField === false ?
+                            <button onClick={()=>{
                                 addTaskToFolder(this.state.newTask);
                                 this.closeModal();
-                            }} id ="modalBtn"> add </a>:
-                            <p id="errorMessage"> Your task is empty... </p>}
-
+                            }} id ="add-product-to-gallery"> add </button>:
+                            <p id="errorMessage"> Some field is empty ...  </p>}
 
                     </div>
 

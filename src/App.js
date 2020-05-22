@@ -44,8 +44,6 @@ class App extends React.Component {
         this.setState({
             goods:updateGoods
         })
-
-
     }
 
     removeProduct=good=>{
@@ -70,14 +68,17 @@ class App extends React.Component {
 
     return (
 
-
-
         <div className = "App">
 
            <Modal  addTaskToFolder={this.addTaskToFolder}/>
 
             <header>
-                <input type="text"  id="search" onKeyUp={this.filter}/>
+                <input
+                type="text"
+                id="search"
+                onKeyUp={this.filter}
+                placeholder="Search..."/>
+
             </header>
 
        <section className="gallery">
