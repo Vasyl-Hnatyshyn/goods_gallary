@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Modal from  './Components/Modal';
+import Product from  './Components/Product/Product';
 
 
 
@@ -38,10 +39,7 @@ class App extends React.Component {
 
      addTaskToFolder=val=> {
 
-         console.log (val)
-        val.id= +`${Math.floor(Math.random() * 1000)}`;
-
-
+         val.id= +`${Math.floor(Math.random() * 1000)}`;
 
         const updateGoods = [...this.state.goods,val];
 
@@ -62,8 +60,11 @@ class App extends React.Component {
             goods:update
         })
     }
+
     pinToTop = id => {
-    this.setState({ setTopElementId: id })
+        this.setState((prevState) => ({
+            setTopElementId: prevState.setTopElementId === id ? null : id
+        }))
     }
 
     // toTop=good=>{
@@ -82,14 +83,9 @@ class App extends React.Component {
         const pinnedItem = this.state.goods.find(good => good.id === this.state.topElementId);
         const goodsList = this.state.goods.filter(good => good.id !== this.state.topElementId);
 
-
-
-
-
     return (
 
-        <Product {...pinnedItem}>
-        {goodsList.map((product) => <Product {...product}>}
+
 
         <div className = "App">
 
@@ -99,17 +95,13 @@ class App extends React.Component {
                 <input type="text"  id="search" onKeyUp={this.filter}/>
             </header>
        <section className="gallery">
-           {this.state.goods.map((good)=>{
+           {goodsList.map((good)=>{
                    return (
-                       <div className="card"  key={good.id}>
-                           <p className="product-titel"> {good.name}</p>
-                           <img src={good.img} alt={good.name}/>
-                           <p className="product-details">{good.details} </p>
-                           <p className="price">  {good.price + " $"}</p>
-
-                         <button className="remove-product" onClick={()=>{this.removeProduct(good)} }>Х</button>
-                         <button className="to-top" onClick={()=>{this.pinToTop(good.id)} }>top</button>
-                       </div>
+                       <Product
+                        good={good}
+                        removeProduct={this.removeProduct}
+                        pinToTop={this.pinToTop}
+                       />
                    )
            })
            }
