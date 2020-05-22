@@ -5,11 +5,11 @@ import React from 'react';
 class Product extends React.Component {
 
     render() {
- const {good,removeProduct,pinToTop,}=this.props
+ const {good,removeProduct,pinToTop,pinnedItem}=this.props
         return (
 
 
-           <div className="card"  key={good.id}   >
+           <div className="card"  key={good.id}  {...pinnedItem} >
                  <p className="product-titel"> {good.name}</p>
                  <img src={good.img} alt={good.name}/>
                  <p className="product-details">{good.details} </p>

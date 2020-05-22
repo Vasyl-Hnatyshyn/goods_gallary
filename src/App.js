@@ -15,7 +15,7 @@ class App extends React.Component {
                {name:"oleh",id:4},
                {name:"roman",id:5},
                ],
-           topElementId: null
+           topElementId: null,
        }
     }
 
@@ -95,6 +95,8 @@ class App extends React.Component {
                 <input type="text"  id="search" onKeyUp={this.filter}/>
             </header>
        <section className="gallery">
+           <Product {...pinnedItem} />
+
            {goodsList.map((good)=>{
                    return (
                        <Product
