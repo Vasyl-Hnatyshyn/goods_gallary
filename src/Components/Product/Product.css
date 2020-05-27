@@ -1,30 +1,23 @@
-.product-details{
-    text-align: left;
-    font-size: 18px;
-    font-weight: 600;
-    padding-left:15px;
-    margin: 5px 0;
-    height: 34px;
-
+.product-details {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  padding-left: 15px;
+  margin: 5px 0;
+  height: 34px;
 }
 
 .bottom-card-text {
-    display: flex;
-    justify-content: space-around;
-    text-transform: capitalize;
-    font-weight: bold;
-    font-size: 18px;
-
-
-
+  display: flex;
+  justify-content: space-around;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .price,
-.product-title{
-    padding: 5px 15px;
-    background-color: rgba(122,250,68,0.8);
-    border-radius: 3px;
-
-
+.product-title {
+  padding: 5px 15px;
+  background-color: rgba(122, 250, 68, 0.8);
+  border-radius: 3px;
 }
-

@@ -1,191 +1,161 @@
-
-
 #modal-back-ground {
-    height: 100%;
-    min-height:100vh;
-    z-index: 222;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100%;
-
+  height: 100%;
+  min-height: 100vh;
+  z-index: 222;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
 }
 
 .modal-content {
-    min-height: 400px;
-    margin: 7% auto 0 11%;
-    width: 57%;
-    background-color: white;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding: 20px 25px;
-    border-radius: 3px;
-    text-align: left;
-
-
+  min-height: 400px;
+  margin: 7% auto 0 11%;
+  width: 57%;
+  background-color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 25px;
+  border-radius: 3px;
+  text-align: left;
 }
 
 label {
-    font-weight: 700;
-    font-size: 17px;
-    padding: 15px 0 6px 10px;
+  font-weight: 700;
+  font-size: 17px;
+  padding: 15px 0 6px 10px;
 }
 
-input{
-    padding: 5px 15px;
-    min-height: 40px;
-    border-radius: 5px;
-    outline: none;
-    border:2px solid darkgrey;
-    font-size: 15px;
+input {
+  padding: 5px 15px;
+  min-height: 40px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid darkgrey;
+  font-size: 15px;
 }
 
 input:hover,
-input:focus{
-    border-color:black
+input:focus {
+  border-color: black;
 }
 
 #close-modal-window {
-    transition: all 0.7s;
-    border-radius: 10%;
-    background-color: yellow;
-    position: absolute;
-    top: 10px;
-    right: -13px;
-    width: 36px;
-    height: 36px;
-    font-weight: 800;
-    font-size: 14px;
+  transition: all 0.7s;
+  border-radius: 10%;
+  background-color: yellow;
+  position: absolute;
+  top: 10px;
+  right: -13px;
+  width: 36px;
+  height: 36px;
+  font-weight: 800;
+  font-size: 14px;
 }
 
 #add-product-to-gallery {
-
-    padding: 14px 35px;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    transition: all 0.7s;
-    background-color: yellow;
-    color: black;
-    position: absolute;
-    border-radius: 3px;
-    font-weight: 800;
-    font-size: 21px;
-    left: 78px;
-    bottom: -28px;
-
-
+  padding: 14px 35px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  transition: all 0.7s;
+  background-color: yellow;
+  color: black;
+  position: absolute;
+  border-radius: 3px;
+  font-weight: 800;
+  font-size: 21px;
+  left: 78px;
+  bottom: -28px;
 }
 
 #close-modal-window:hover,
 #add-product-to-gallery:hover {
-    box-shadow: 1px 4px 30px -8px rgba(15,18,15,0.57);
+  box-shadow: 1px 4px 30px -8px rgba(15, 18, 15, 0.57);
 }
 
-
-
-
-
-#modal-add-product{
-
-    height: 45px;
-    padding: 0 3%;
-    border-radius: 3px;
-    background-color: rgba(122,250,68,0.8);
-    position: absolute;
-    top: 0;
-    right: 10%;
-    animation: radial-pulse 1.2s infinite;
-    transition: all 0.7s;
-    color: darkslategrey;
-    font-weight: 800;
-    text-transform: capitalize;
-    font-size: 15px;
-    box-shadow: 1px 4px 30px -8px rgba(15,18,15,0.57);
+#modal-add-product {
+  height: 45px;
+  padding: 0 3%;
+  border-radius: 3px;
+  background-color: rgba(122, 250, 68, 0.8);
+  position: absolute;
+  top: 0;
+  right: 10%;
+  animation: radial-pulse 1.2s infinite;
+  transition: all 0.7s;
+  color: darkslategrey;
+  font-weight: 800;
+  text-transform: capitalize;
+  font-size: 15px;
+  box-shadow: 1px 4px 30px -8px rgba(15, 18, 15, 0.57);
 }
 
-#errorMessage{
-
-    padding: 10px 25px;
-    letter-spacing: 1.2px;
-    transition: all 0.6s;
-    background-color: black;
-    color: white;
-    position: absolute;
-    border-radius: 3px;
-    font-weight: 800;
-    font-size: 21px;
-    left: 78px;
-    bottom: -23px;
-
+#errorMessage {
+  padding: 10px 25px;
+  letter-spacing: 1.2px;
+  transition: all 0.6s;
+  background-color: black;
+  color: white;
+  position: absolute;
+  border-radius: 3px;
+  font-weight: 800;
+  font-size: 21px;
+  left: 78px;
+  bottom: -23px;
 }
 
-
-#modal-add-product:hover{
-    background-color: #3fef0b;
-    color:white;
+#modal-add-product:hover {
+  background-color: #3fef0b;
+  color: white;
 }
-
 
 @keyframes radial-pulse {
-    0% {
-        box-shadow: 0 0 0 0px rgba(225, 225, 225, 0.8);
-    }
+  0% {
+    box-shadow: 0 0 0 0px rgba(225, 225, 225, 0.8);
+  }
 
-    100% {
-        box-shadow: 0 0 0 20px rgba(225, 225, 225, 0);
-    }
+  100% {
+    box-shadow: 0 0 0 20px rgba(225, 225, 225, 0);
+  }
 }
 
 @media only screen and (max-width: 576px) {
+  #modal-add-product {
+    height: 35px;
+    border-radius: 10px;
+    background-color: #3fef0b;
+    top: 10.3%;
+    right: 36%;
+    transition: all 0.6s;
+    color: white;
+    animation: radial-pulse 1.2s infinite;
+  }
 
+  @keyframes radial-pulse {
+  }
+  #errorMessage {
+    padding: 8px 10px;
+    font-weight: 800;
+    font-size: 19px;
+    left: 78px;
+  }
+  #add-product-to-gallery {
+    padding: 10px 20px;
+    font-size: 19px;
+    left: 60px;
+    bottom: -22px;
+  }
 
-    #modal-add-product {
-        height: 35px;
-        border-radius: 10px;
-        background-color: #3fef0b;
-        top: 10.3%;
-        right: 36%;
-        transition: all 0.6s;
-        color: white;
-        animation: radial-pulse 1.2s infinite;
-    }
-
-    @keyframes radial-pulse {
-
-    }
-    #errorMessage{
-
-        padding: 8px 10px;
-        font-weight: 800;
-        font-size: 19px;
-        left: 78px;
-
-    }
-    #add-product-to-gallery {
-
-        padding: 10px 20px;
-        font-size: 19px;
-        left: 60px;
-        bottom: -22px;
-
-    }
-
-
-    .modal-content {
-        width: 90%;
-        margin: 10% auto;
-    }
-
+  .modal-content {
+    width: 90%;
+    margin: 10% auto;
+  }
 }
 
 @media only screen and (max-width: 992px) {
-
-    .modal-content {
-         width: 70%;
-    }
-
+  .modal-content {
+    width: 70%;
+  }
 }
-
-
