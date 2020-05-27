@@ -9,15 +9,16 @@ class App extends React.Component {
     constructor(){
        super();
        this.state = {
-           goods:[{name:"mercedes",id:1, price: "22700",details:"lerem sadasdasd asdasdasd", img:"https://cdn0.riastatic.com/photos/ir/new/auto/photo/mercedes-benz_gls-350__317269940-620x415x70.jpg"},
-               {name:"audi",id:2,price: "66220",details:"bot bot", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSEpuTUzBy1fm7sPB9cNCMZOV2uojPhwxrrNjlg1iEaC09xigE_&usqp=CAU"},
-               {name:"ivan",id:3},
-               {name:"oleh",id:4},
-               {name:"roman",id:5},
-               ],
+           goods:[{name:"mercedes",id:1, price: "22700",details:"mercedes ml450 amg", img:"https://cdn0.riastatic.com/photos/ir/new/auto/photo/mercedes-benz_gls-350__317269940-620x415x70.jpg"},
+               {name:"audi",id:2,price: "66220",details:"audi Q7 rs 2013", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSEpuTUzBy1fm7sPB9cNCMZOV2uojPhwxrrNjlg1iEaC09xigE_&usqp=CAU"},
+               {name:"ASUS Laptop",id:55,price: "312",details:"Acer Aspire 5 Slim Laptop, 15.6 inches Full HD", img:"https://images-na.ssl-images-amazon.com/images/I/71vvXGmdKWL._AC_SL1500_.jpg"},
+               {name:"Nike Air Max 270",id:5,price: "55",details:"Nike Air Max 270 mans,from USA", img:"https://beshop.com.ua/upload/resize/510408/krossovki_nike_air_max_720_city_black.jpeg"},
+                ],
            topElementId: null,
        }
     }
+
+
 
     filter=(e)=> {
 
