@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Vasyl-Hnatyshyn/goods_gallary/static/css/main.d816e39e.chunk.css",
+    "main.js": "/Vasyl-Hnatyshyn/goods_gallary/static/js/main.090e13b2.chunk.js",
+    "main.js.map": "/Vasyl-Hnatyshyn/goods_gallary/static/js/main.090e13b2.chunk.js.map",
+    "runtime-main.js": "/Vasyl-Hnatyshyn/goods_gallary/static/js/runtime-main.02453a76.js",
+    "runtime-main.js.map": "/Vasyl-Hnatyshyn/goods_gallary/static/js/runtime-main.02453a76.js.map",
+    "static/js/2.1adbec0a.chunk.js": "/Vasyl-Hnatyshyn/goods_gallary/static/js/2.1adbec0a.chunk.js",
+    "static/js/2.1adbec0a.chunk.js.map": "/Vasyl-Hnatyshyn/goods_gallary/static/js/2.1adbec0a.chunk.js.map",
+    "index.html": "/Vasyl-Hnatyshyn/goods_gallary/index.html",
+    "precache-manifest.dfd3828a8335d9260e3c4b30ae422111.js": "/Vasyl-Hnatyshyn/goods_gallary/precache-manifest.dfd3828a8335d9260e3c4b30ae422111.js",
+    "service-worker.js": "/Vasyl-Hnatyshyn/goods_gallary/service-worker.js",
+    "static/css/main.d816e39e.chunk.css.map": "/Vasyl-Hnatyshyn/goods_gallary/static/css/main.d816e39e.chunk.css.map",
+    "static/js/2.1adbec0a.chunk.js.LICENSE.txt": "/Vasyl-Hnatyshyn/goods_gallary/static/js/2.1adbec0a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.02453a76.js",
+    "static/js/2.1adbec0a.chunk.js",
+    "static/css/main.d816e39e.chunk.css",
+    "static/js/main.090e13b2.chunk.js"
+  ]
+}
